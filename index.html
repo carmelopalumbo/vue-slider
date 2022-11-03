@@ -22,7 +22,10 @@
   <div id="app">
     <div class="container">
           <div class="slider-big">
-            <img class="big_img" src="assets/img/berlino.jpg" alt="">
+            <img
+            class="big_img" 
+            :src="cities[counterImg].image" 
+            :alt="cities[counterImg].name">
           <div class="descr-slider">
             <p class="name">NOME</p>
             <p class="people">PEOPLE</p>
@@ -33,11 +36,11 @@
           <div class="slider-thumb">
 
             <div class="thumbnails">
-              <img class="thumb_img thumb_none" src="assets/img/berlino.jpg" alt="">
-              <img class="thumb_img thumb_none" src="assets/img/berlino.jpg" alt="">
-              <img class="thumb_img thumb_none" src="assets/img/berlino.jpg" alt="">
-              <img class="thumb_img thumb_none" src="assets/img/berlino.jpg" alt="">
-              <img class="thumb_img thumb_none" src="assets/img/berlino.jpg" alt="">
+              <img 
+              v-for="city in cities"
+              class="thumb_img thumb_none" 
+              :src="city.image" 
+              alt="city.name">
             </div>
 
             <div class="buttons">
