@@ -48,10 +48,12 @@ createApp({
     },
 
     methods:{
-
+        changeImg(index){
+            this.counterImg = index;
+        }
     },
 
     mounted(){
-
+        
     }
 }).mount("#app")

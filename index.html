@@ -27,9 +27,9 @@
             :src="cities[counterImg].image" 
             :alt="cities[counterImg].name">
           <div class="descr-slider">
-            <p class="name">NOME</p>
-            <p class="people">PEOPLE</p>
-            <p class="descr">DESCR</p>
+            <p class="name">{{cities[counterImg].name}}</p>
+            <p class="people">{{cities[counterImg].people}}</p>
+            <p class="descr">{{cities[counterImg].descr}}</p>
           </div>
           </div>
 
@@ -37,14 +37,17 @@
 
             <div class="thumbnails">
               <img 
-              v-for="city in cities"
-              class="thumb_img thumb_none" 
-              :src="city.image" 
+              v-for="(city, index) in cities"
+              class="thumb_img thumb_none"
+              :class="{'thumb_active' : index === counterImg }"
+              :src="city.image"
+              @click="changeImg(index)"
               alt="city.name">
             </div>
 
             <div class="buttons">
-                <button id="prev"><i class="fa-solid fa-backward"></i></button>
+                <button 
+                id="prev"><i class="fa-solid fa-backward"></i></button>
                 <button id="next"><i class="fa-solid fa-forward"></i></button>
             </div>
          </div>
