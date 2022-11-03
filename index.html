@@ -20,8 +20,9 @@
 <body>
 
   <div id="app">
-    <div 
-    @mouseover="stopAutoSlides()"
+    <div
+    @mouseover="stopSlides()"
+    @mouseleave="getAutoSlides()" 
     class="container">
           <div class="slider-big">
             <img

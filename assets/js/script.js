@@ -43,7 +43,8 @@ createApp({
                 }
             ],
 
-            counterImg: 0
+            counterImg: 0,
+            autoplayFunc : () => {}
         }
     },
 
@@ -65,13 +66,15 @@ createApp({
         },
 
         getAutoSlides(){
-            setInterval(() => {
+          this.autoplayFunc =  setInterval(() => {
                 this.nextPrev(true);
             }, 3000);
+           
         },
-
-        stopAutoSlides(){
-            clearInterval(this.nextPrev);
+        
+        stopSlides () {
+            console.log('Mouse over')
+            clearInterval(this.autoplayFunc)
         }
     },
 
