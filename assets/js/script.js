@@ -50,6 +50,18 @@ createApp({
     methods:{
         changeImg(index){
             this.counterImg = index;
+        },
+
+        nextPrev(checkImg){
+            checkImg ? this.counterImg++ : this.counterImg--;
+
+            if(this.counterImg > this.cities.length - 1){
+                this.counterImg = 0;
+            }
+
+            if(this.counterImg < 0){
+                this.counterImg = this.cities.length - 1;
+            }
         }
     },
 

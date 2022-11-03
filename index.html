@@ -47,8 +47,11 @@
 
             <div class="buttons">
                 <button 
-                id="prev"><i class="fa-solid fa-backward"></i></button>
-                <button id="next"><i class="fa-solid fa-forward"></i></button>
+                id="prev"
+                @click="nextPrev(false)"><i class="fa-solid fa-backward"></i></button>
+                <button 
+                id="next"
+                @click="nextPrev(true)"><i class="fa-solid fa-forward"></i></button>
             </div>
          </div>
     </div>
