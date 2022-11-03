@@ -68,11 +68,15 @@ createApp({
             setInterval(() => {
                 this.nextPrev(true);
             }, 3000);
+        },
+
+        stopAutoSlides(){
+            clearInterval(this.nextPrev);
         }
     },
 
     mounted(){
         this.getAutoSlides();
     }
-    
+
 }).mount("#app")
