@@ -81,14 +81,12 @@ createApp({
         },
 
         //stoppa lo scorrimento automatico
-        stopSlides () {
-            console.log('Mouse over')
+        stopSlides(){
             clearInterval(this.autoplayFunc)
         }
     },
 
     mounted(){
-
         //imposta lo scorrimento automatico al caricamento della pagina
         this.getAutoSlides();
     }
