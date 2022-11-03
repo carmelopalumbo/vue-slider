@@ -20,6 +20,8 @@
 <body>
 
   <div id="app">
+
+    <!-- mouse sul container stoppa la funzione di auto slide -->
     <div
     @mouseover="stopSlides()"
     @mouseleave="getAutoSlides()" 
@@ -38,6 +40,7 @@
 
           <div class="slider-thumb">
 
+            <!-- al click della thumbnail si passa all'immagine associata -->
             <div class="thumbnails">
               <img 
               v-for="(city, index) in cities"

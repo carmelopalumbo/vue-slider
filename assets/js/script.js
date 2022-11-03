@@ -6,6 +6,8 @@ createApp({
 
     data(){
         return{
+
+            // array di oggetti
             cities:[
                 {
                     name: 'New York',
@@ -44,15 +46,20 @@ createApp({
             ],
 
             counterImg: 0,
+
+            // funzione vuota che verra' inzializzata successivamente
             autoplayFunc : () => {}
         }
     },
 
     methods:{
+
+        //gestione click delle thumb
         changeImg(index){
             this.counterImg = index;
         },
 
+        //gestione dei button
         nextPrev(checkImg){
             checkImg ? this.counterImg++ : this.counterImg--;
 
@@ -65,13 +72,15 @@ createApp({
             }
         },
 
+        //imposta lo scorrimento automatico
         getAutoSlides(){
           this.autoplayFunc =  setInterval(() => {
                 this.nextPrev(true);
             }, 3000);
            
         },
-        
+
+        //stoppa lo scorrimento automatico
         stopSlides () {
             console.log('Mouse over')
             clearInterval(this.autoplayFunc)
@@ -79,6 +88,8 @@ createApp({
     },
 
     mounted(){
+
+        //imposta lo scorrimento automatico al caricamento della pagina
         this.getAutoSlides();
     }
 
