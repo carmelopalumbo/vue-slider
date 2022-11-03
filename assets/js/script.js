@@ -62,10 +62,17 @@ createApp({
             if(this.counterImg < 0){
                 this.counterImg = this.cities.length - 1;
             }
+        },
+
+        getAutoSlides(){
+            setInterval(() => {
+                this.nextPrev(true);
+            }, 3000);
         }
     },
 
     mounted(){
-        
+        this.getAutoSlides();
     }
+    
 }).mount("#app")
