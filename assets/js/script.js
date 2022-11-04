@@ -47,8 +47,8 @@ createApp({
 
             counterImg: 0,
 
-            // funzione vuota che verra' inzializzata successivamente
-            autoplayFunc : () => {}
+            // data vuoto che verra' inzializzata successivamente come funzione
+            autoplayFunc : ''
         }
     },
 
@@ -62,7 +62,11 @@ createApp({
         //gestione dei button
         nextPrev(checkImg){
             checkImg ? this.counterImg++ : this.counterImg--;
+            this.checkLoop();
+        },
 
+        // check dello scorrimento infinito dello slider
+        checkLoop(){
             if(this.counterImg > this.cities.length - 1){
                 this.counterImg = 0;
             }
